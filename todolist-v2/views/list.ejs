@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo list</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="box" id='heading'>
+		<h1>Its <%= kindOfDay%>!</h1>
+		<h2>Enter a new name after the URL to create your own private list</h2>
+		<h4>Click on the checkboxes to make items disappear.</h4>
+		<p>For the sake of Simplicity and Privacy, the name of all Lists is not displayed, kindly remember your URL!!</p>
+	</div>
+	<div class="box">
+		<% newListItems.forEach(el=>{ %>
+		<form action="/delete" method="post">
+			<div class="item">
+				<input type="checkbox" name='checkbox' value='<%=el._id%>' onChange='this.form.submit()'>
+				<p><%= el.name %></p>
+			</div>
+			<input type="hidden" name="listName" value="<%=listTitle%>">
+		</form>
+		<% }) %>
+
+
+		<form class='item' action="/" method="post">
+			<input type="text" name="newItem" placeholder="Enter new Item" autocomplete="off">
+			<button type="submit" name="list" value="<%=listTitle%>">+</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<%- include("partials/header"); -%>
+ 
+      <% posts.forEach(function(post){ %>
+        <% if(post.title=='Home'){ %>
+          <h1>Home</h1>
+          <p><%=post.content%> </p>
+        <% } %>
+      <% }) %>
+
+  <%  posts.forEach(function(post){ %>
+  	<% if(post.title=='Home'){ %>
+  		  <% console.log('home found'); %>
+  	<% } else{ %>
+  		<h1><%=post.title%></h1>
+    <p><%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post.title%>">Read More</a>
+    </p>
+  	<% } %>
+    
+    <script>console.log('/posts/<%=post.title%>')</script>
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
