@@ -1,0 +1,33 @@
+<%- include('header') %>
+
+
+<button id="logout" variant="contained" color="primary" class="MuiButton-containedPrimary" onclick='location.href="./"'>Logout</button>
+	<h3>Vote freely with our secure and authentic app to finally decide which flavour of ice-cream is the best!!</h3>
+	<form action="/vote" method="POST">
+		<div class="options">
+			<div class="chocolate flavour">
+				<input type="radio" id="Chocolate" name="Flavour" value="Chocolate">
+				<label for="Chocolate">Chocolate</label><br>
+				<img src="Chocolate.png" alt="Chocolate">
+			</div>
+			<div class="butterscotch flavour">
+				<input type="radio" id="Butterscotch" name="Flavour" value="Butterscotch">
+				<label for="Butterscotch">Butterscotch</label><br>
+				<img src="Butterscotch.png" alt="Butterscotch">
+			</div>
+			<div class="vanilla flavour">
+				<input type="radio" id="Vanilla" name="Flavour" value="Vanilla">
+				<label for="Vanilla">Vanilla</label><br>
+				<img src="Vanilla.png" alt="Vanilla">
+			</div>
+			<div class="strawberry flavour">
+				<input type="radio" id="Strawberry" name="Flavour" value="Strawberry">
+				<label for="Strawberry">Strawberry</label><br>
+				<img src="Strawberry.png" alt="Strawberry">
+			</div>
+		</div>
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+
+<%- include('footer') %>

@@ -1,0 +1,40 @@
+<%- include('header') %>
+
+
+<script>
+	window.onload = function () {
+
+		var options = {
+			theme: "dark1",
+			animationEnabled: true,
+			title: {
+				text: "Total votes"
+			},
+			axisY: {
+				title: "No. of votes",
+				suffix: ""
+			},
+			axisX: {
+				title: "Flavours"
+			},
+			data: [{
+				type: "doughnut",
+				color: '#aa4a30',
+				yValueFormatString: "#,##0.0#"%"",
+				dataPoints: [
+				{ label: 'Chocolate' , y: <%=chocolate%> , color: '#aa4a30'},	
+				{ label: 'Butterscotch' , y: <%=butterscotch%>, color: '#ebdc87' },
+				{ label: 'Vanilla' , y: <%=vanilla%> , color: 'white' },
+				{ label: 'Strawberry' , y: <%=strawberry%> , color: '#fe91ca'},
+				]
+			}]
+		};
+		$("#chartContainer").CanvasJSChart(options);
+	}
+</script>
+
+<div id="chartContainer" style="height: 300px; width: 40%; margin: 10vw auto auto;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+<%- include('footer') %>
