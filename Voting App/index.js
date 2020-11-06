@@ -56,11 +56,11 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
 	clientID: process.env.GOOGLE_CLIENT_ID,
 	clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-	callbackURL: 'http://localhost:3000/auth/callback/google',
+	callbackURL: 'https://fast-stream-91915.herokuapp.com/auth/callback/google',
 	userProfileURL: "https://www.googleapis.com/userinfo/v2/me"
 },
 function(accessToken, refreshToken, profile, cb) {
-	User.insertMany({
+	User.updateMany({
 		name: profile.displayName,
 		username: profile._json.email,
 		googleProfileInfo: profile,
@@ -76,11 +76,11 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new FacebookStrategy({
 	clientID: process.env.FACEBOOK_APP_ID,
 	clientSecret: process.env.FACEBOOK_APP_SECRET,
-	callbackURL: "http://localhost:3000/auth/facebook/callback",
+	callbackURL: "https://fast-stream-91915.herokuapp.com/auth/facebook/callback",
 	profileFields: ['id', 'displayName', 'name', 'gender', 'profileUrl', 'email']
 },
 function(accessToken, refreshToken, profile, cb) {
-	User.insertMany({
+	User.updateMany({
 		name: profile.displayName,
 		username: profile._json.email,
 		facebookProfileInfo: profile,
