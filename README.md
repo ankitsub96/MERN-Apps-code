@@ -4,7 +4,6 @@ Some Full-Stack Web apps created using Node.js
 
 Kindly visit the following for the code- https://github.com/ankitsub96/MERN-Apps-code
 
-https://fast-stream-91915.herokuapp.com/  -Voting App- Cote for your favourite flavor of ice cream. App made with Express JS  and data persistence using MongoDB, with Social Media login using Passport.js
 
 https://serene-bayou-25678.herokuapp.com/   -Blog app- Create and access text-only blogs. App made with Express JS and data persistence using MongoDB
 
